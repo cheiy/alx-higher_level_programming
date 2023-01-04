@@ -2,5 +2,6 @@
 def print_last_digit(number):
     num_string = str(number)
     last_digit = num_string[-1]
-    print("{}".format(last_digit), end="")
+    real_num = int(last_digit)
+    print("{}".format(real_num), end="")
     return(last_digit)
