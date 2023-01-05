@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import py_compile
+import os
+filename = os.environ.get('PYFILE')
+os.environ['PYFILEc'] = filename
+out_file = os.environ.get('PYFILEc')
+out_file += "c"
+py_compile.compile(filename, out_file)
