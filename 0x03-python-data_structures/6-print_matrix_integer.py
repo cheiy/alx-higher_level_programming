@@ -8,7 +8,7 @@ def print_matrix_integer(matrix=[[]]):
             count = 1
             for item in list:
                 if count < list_len:
-                    print("{}".format(item), end=" ")
+                    print("{:d}".format(item), end=" ")
                 else:
-                    print("{}".format(item))
+                    print("{:d}".format(item))
                 count += 1
