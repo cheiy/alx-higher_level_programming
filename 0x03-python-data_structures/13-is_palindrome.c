@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 	current = *head;
 	nums = malloc(sizeof(int) * (length + 1));
 	if (nums == NULL)
-		exit(1);
+		exit(0);
 	while (current != NULL)
 	{
 		nums[i] = current->n;
@@ -37,18 +37,19 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	nums[i] = '\0';
-	if (nums != NULL)
+	i = 0;
+	length--;
+	while (i <= length)
 	{
-		i = 0;
-		while (i <= length)
+		if (nums[i] == nums[length])
+			palindrome = 1;
+		else
 		{
-			if (nums[i] == nums[length])
-				palindrome = 1;
-			else
-				palindrome = 0;
-			i++, length--;
+			free(nums);
+			return (0);
 		}
-		free(nums);
+		i++, length--;
 	}
+	free(nums);
 	return (palindrome);
 }
