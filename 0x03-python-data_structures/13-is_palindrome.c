@@ -12,31 +12,43 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int length, vals, i, palindrome;
-	int *nums = NULL;
+	int length, i, palindrome;
+	int *nums;
 	listint_t *current;
 
 	i = 0;
-	vals = 0;
 	length = 0;
 	if (*head == NULL)
 		return (0);
 	current = *head;
 	while (current != NULL)
 	{
-		nums = realloc(nums, (vals + 1) * sizeof(int));
-		nums[vals] = current->n;
 		current = current->next;
 		length++;
-		vals++;
 	}
-	while (i <= length)
+	current = *head;
+	nums = malloc(sizeof(int) * (length + 1));
+	if (nums == NULL)
+		exit(1);
+	while (current != NULL)
 	{
-		if (nums[i] == nums[length])
-			palindrome = 1;
-		else
-			palindrome = 0;
-		i++, length--;
+		nums[i] = current->n;
+		current = current->next;
+		i++;
+	}
+	nums[i] = '\0';
+	if (nums != NULL)
+	{
+		i = 0;
+		while (i <= length)
+		{
+			if (nums[i] == nums[length])
+				palindrome = 1;
+			else
+				palindrome = 0;
+			i++, length--;
+		}
+		free(nums);
 	}
 	return (palindrome);
 }
