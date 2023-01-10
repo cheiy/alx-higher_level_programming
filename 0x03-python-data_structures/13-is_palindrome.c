@@ -12,12 +12,10 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int length, i, palindrome;
-	int *nums;
+	int length, i, palindrome, *nums;
 	listint_t *current;
 
-	i = 0;
-	length = 0;
+	i = length = 0;
 	if (*head == NULL)
 		return (0);
 	current = *head;
@@ -26,6 +24,8 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		length++;
 	}
+	if (length == 1)
+		return (0);
 	current = *head;
 	nums = malloc(sizeof(int) * (length + 1));
 	if (nums == NULL)
