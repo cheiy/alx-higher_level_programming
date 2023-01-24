@@ -9,7 +9,7 @@ def safe_print_division(a, b):
         result = None
     finally:
         try:
-            print("{} {:.1f}".format("Inside result: ", result))
+            print("{}{:.1f}".format("Inside result: ", result))
         except TypeError:
             pass
         return result
