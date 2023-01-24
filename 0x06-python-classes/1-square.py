@@ -5,7 +5,7 @@
 class Square():
     """Class Square defines a square"""
 
-    def __init__(self, size=None):
+    def __init__(self, __size):
         """Init method that instantiates __size__ with None
 
 
@@ -13,4 +13,4 @@ class Square():
             size (:obj: `int`): The size of the square.
 
         """
-        self.__size = None
+        self.__size = 3
