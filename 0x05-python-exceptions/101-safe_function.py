@@ -2,7 +2,7 @@
 def safe_function(fct, *args):
     try:
         res = fct(args)
-    except (ValueError, IndexError) as err:
+    except Exception as err:
         print("Exception:", err)
         res = None
     return res
