@@ -12,4 +12,4 @@ def safe_print_division(a, b):
             print("{} {:.1f}".format("Inside result: ", result))
         except TypeError:
             pass
-    return result
+        return result
