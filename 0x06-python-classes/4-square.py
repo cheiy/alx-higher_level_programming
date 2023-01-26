@@ -10,7 +10,6 @@ class Square():
 
         Args:
             size (:obj: `int`): The size of the square.
-
         """
         try:
             self.__size = size
@@ -31,7 +30,20 @@ class Square():
 
 
         """
-        return (self.__size * self.__size)
+        try:
+            area = self.__size * self.__size
+            if isinstance(self.__size, int) is False:
+                raise TypeError
+            if self.__size < 0:
+                raise ValueError
+        except TypeError:
+            print("{}".format("size must be an integer"))
+            exit()
+        except ValueError:
+            print("{}".format("size myst be >= 0"))
+            exit()
+        else:
+            return area
 
     @property
     def size(self):
@@ -53,7 +65,7 @@ class Square():
 
 
         """
-        try:
+        """try:
             self.__size = value
             if isinstance(int, value) is not True:
                 raise TypeError
@@ -62,4 +74,5 @@ class Square():
         except TypeError:
             print("{}".format("size must be an integer"))
         except ValueError:
-            print("{}".format("size must be >= 0"))
+            print("{}".format("size must be >= 0"))"""
+        self.__size = value
