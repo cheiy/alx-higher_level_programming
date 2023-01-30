@@ -5,30 +5,6 @@
 class Rectangle:
     """This is a class that defines a rectangle"""
 
-    def __init__(self, width=0, height=0):
-        """ Init method initializes width and height to 0
-
-        Args:
-            width (int): Initializes the width of the rectangle.
-            height (int): Initializes the height of the rectangle.
-
-        """
-        try:
-            if isinstance(width, int) is False:
-                raise TypeError('width must be an integer')
-            if width < 0:
-                raise ValueError('width must be >= 0')
-            if isinstance(height, int) is False:
-                raise TypeError('height must be an integer')
-            if height < 0:
-                raise ValueError('height must be >=0')
-            self.__width = width
-            self.__height = height
-        except TypeError as err1:
-            print(err1)
-        except ValueError as err2:
-            print(err2)
-
     @property
     def width(self):
         """int: Gets the width of the rectangle."""
@@ -66,3 +42,14 @@ class Rectangle:
             print(err)
         except ValueError as err:
             print(err)
+
+    def __init__(self, width=0, height=0):
+        """ Init method initializes width and height to 0
+
+        Args:
+            width (int): Initializes the width of the rectangle.
+            height (int): Initializes the height of the rectangle.
+
+        """
+        self.height = height
+        self.width = width
