@@ -1,0 +1,21 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(-1, -1)
+-2
+>>> add_integer(0, 0)
+0
+>>> add_integer(100, -1000)
+-900
+>>> add_integer(4, "School")
+b must be an integer
+>>> add_integer("string", "string")
+a must be an integer
+>>> add_integer(4, "string")
+b must be an integer
+>>> add_integer("string", 4)
+a must be an integer
+>>> add_integer(5.6, 8.4)
+13
