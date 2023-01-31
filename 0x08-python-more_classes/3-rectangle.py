@@ -70,7 +70,7 @@ class Rectangle:
     def __str__(self):
         """The str method for the class"""
         if self.__width == 0 or self.__height == 0:
-            print("")
+            return ("")
         else:
             i = j = 0
             while j < self.__height:
