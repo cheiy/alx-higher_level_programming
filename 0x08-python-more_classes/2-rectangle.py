@@ -55,3 +55,14 @@ class Rectangle:
             print(err)
         else:
             self.__height = value
+
+    def area(self):
+        """Public method that returns the rectangle area"""
+        return (self.__height * self.__width)
+
+    def perimeter(self):
+        """Public instance method that returns the perimeter"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return ((self.__height + self.__width) * 2)
