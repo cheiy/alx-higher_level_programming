@@ -1,0 +1,13 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Samuel", "Chege")
+My name is Samuel Chege
+>>> say_my_name(" ", "Blank first name")
+My name is   Blank first name
+>>> say_my_name(10, 1)
+first_name must be a string
+>>> say_my_name("samuel", 2)
+last_name must be a string
+>>> say_my_name("No second Name",)
+My name is No second Name 
+>>> say_my_name("No second Name")
+My name is No second Name 
