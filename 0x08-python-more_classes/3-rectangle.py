@@ -80,8 +80,4 @@ class Rectangle:
                 print()
                 i = 0
                 j += 1
-        return ("")
-
-    def __repr__(self):
-        """The repr method for the class"""
-        return ("")
+        return ""
