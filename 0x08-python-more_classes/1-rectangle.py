@@ -26,9 +26,9 @@ class Rectangle:
         """See getter method above for this setter"""
         try:
             if isinstance(value, int) is False:
-                raise TypeError('width must be an integer')
+                raise TypeError('[TypeError] width must be an integer')
             if value < 0:
-                raise ValueError('width must be >= 0')
+                raise ValueError('[ValueError] width must be >= 0')
         except TypeError as err:
             print(err)
         except ValueError as err:
@@ -46,9 +46,9 @@ class Rectangle:
         """Set getter method above for this setter"""
         try:
             if isinstance(value, int) is False:
-                raise TypeError('height must be an integer')
+                raise TypeError('[TypeError] height must be an integer')
             if value < 0:
-                raise ValueError('height must be >= 0')
+                raise ValueError('[ValueError] height must be >= 0')
         except TypeError as err:
             print(err)
         except ValueError as err:
