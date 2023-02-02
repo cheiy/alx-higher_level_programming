@@ -31,9 +31,9 @@ class Rectangle:
         """See getter method above for this setter"""
         try:
             if isinstance(value, int) is False:
-                raise TypeError('width must be an integer')
+                raise TypeError('[TypeError] width must be an integer')
             if value < 0:
-                raise ValueError('width must be >= 0')
+                raise ValueError('[ValueError] width must be >= 0')
         except TypeError as err:
             print(err)
         except ValueError as err:
@@ -51,9 +51,9 @@ class Rectangle:
         """Set getter method above for this setter"""
         try:
             if isinstance(value, int) is False:
-                raise TypeError('height must be an integer')
+                raise TypeError('[TypeError] height must be an integer')
             if value < 0:
-                raise ValueError('height must be >= 0')
+                raise ValueError('[ValueError] height must be >= 0')
         except TypeError as err:
             print(err)
         except ValueError as err:
@@ -73,19 +73,26 @@ class Rectangle:
             return ((self.__height + self.__width) * 2)
 
     def __str__(self):
-        """The str method for the class"""
+        """__str__ method prints rectangle as #"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         else:
+            ret = ""
+            ret_len = 0
             i = j = 0
             while j < self.__height:
                 while i < self.__width:
-                    print(self.print_symbol, end="")
+                    ret += "#"
                     i += 1
-                print()
+                if j == self.__height and i == self.__width:
+                    ret += ""
+                else:
+                    ret += "\n"
                 i = 0
                 j += 1
-        return ""
+            ret_len = len(ret)
+            ret = ret[0:ret_len-1]
+        return (ret)
 
     def __repr__(self):
         """The repr method for the class"""
@@ -99,10 +106,12 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Static method to find if two rects are equal"""
+        err_msg = '[TypeError] rect_1 must be an instance of Rectangle'
+        err_msg2 = '[TypError] rect_2 must be an instance of Rectangle'
         if isinstance(rect_1, Rectangle) is False:
-            raise TypeError('rect_1 must be an instance of Rectangle')
+            raise TypeError(err_msg)
         if isinstance(rect_2, Rectangle) is False:
-            raise TypeError('rect_2 must be an instance of Rectangle')
+            raise TypeError(err_msg2)
         if rect_1.area() < rect_2.area():
             return rect_2
         elif rect_1.area() == rect_2.area():
