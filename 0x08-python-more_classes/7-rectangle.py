@@ -81,7 +81,7 @@ class Rectangle:
             i = j = 0
             while j < self.__height:
                 while i < self.__width:
-                    ret += "#"
+                    ret += str(self.print_symbol)
                     i += 1
                 if j == self.__height and i == self.__width:
                     ret += ""
