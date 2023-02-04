@@ -33,6 +33,6 @@ class TestMaxInteger(unittest.TestCase):
         """ Function tests whether the list is empty """
 
         empty_list = []
-        self.assertEqual(max_integer(empty_list), "")
+        self.assertEqual(max_integer(empty_list), None)
 
 
