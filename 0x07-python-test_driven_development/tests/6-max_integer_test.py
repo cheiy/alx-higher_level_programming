@@ -17,6 +17,6 @@ class TestMaxInteger(unittest.TestCase):
         raises an error when wrong types are fed into it"""
 
         list_1 = ['some', 'string', 5, 6, 7]
-        list_2 = [6.1, 5.4, -8.76, -9.09]
+        list_2 = [6.1, 5.4, -8.76, 'wow']
         self.assertRaises(TypeError, max_integer, list_1)
         self.assertRaises(TypeError, max_integer, list_2)
