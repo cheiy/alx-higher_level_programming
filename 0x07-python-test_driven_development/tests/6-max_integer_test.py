@@ -24,5 +24,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, list_2)
 
     def test_max_at_start(self):
+        """ Function test whether the first item in the list is the largest"""
+
         list1 = [100, 5, 6, 3, 4]
         self.assertEqual(max_integer(list1), 100)
+
+    def test_empty(self):
+        """ Function tests whether the list is empty """
+
+        empty_list = []
+        self.assertEqual(max_integer(empty_list), "")
+
+
