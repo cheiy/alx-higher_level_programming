@@ -9,8 +9,10 @@ class TestMaxInteger(unittest.TestCase):
 
         list_1 = [1, 2, 3, 4, 5, 6, -10]
         list2 = [-1, -2, -3, 0]
+        list3 = [1]
         self.assertEqual(max_integer(list_1), 6)
         self.assertEqual(max_integer(list2), 0)
+        self.assertEqual(max_integer(list3), 1)
 
     def test_types(self):
         """ Function tests whether the max_integer function
@@ -20,3 +22,7 @@ class TestMaxInteger(unittest.TestCase):
         list_2 = [6.1, 5.4, -8.76, 'wow']
         self.assertRaises(TypeError, max_integer, list_1)
         self.assertRaises(TypeError, max_integer, list_2)
+
+    def test_max_at_start(self):
+        list1 = [100, 5, 6, 3, 4]
+        self.assertEqual(max_integer(list1), 100)
