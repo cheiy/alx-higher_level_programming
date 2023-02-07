@@ -5,9 +5,8 @@
 class BaseGeometry:
     """ BaseGeometry class """
 
-    def __init__(self, name="", value=0):
-        self.name = name
-        self.value = value
+    def __init__(self, name=""):
+        self.__name = name
 
     def area(self):
         """ Area method """
