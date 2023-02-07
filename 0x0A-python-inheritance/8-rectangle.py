@@ -6,6 +6,7 @@ class Rectangle(BaseGeometry):
     """ Rectangle class """
 
     def __init__(self, width, height):
+        """ __init__ method to instantiate objects """
         self.__width = width
         self.__height = height
         integer_validator(self, "width", width)
