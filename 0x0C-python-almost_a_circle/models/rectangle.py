@@ -112,3 +112,14 @@ class Rectangle(Base):
     def area(self):
         """ Method that returns the area of a rectangle instance"""
         return self.__width * self.__height
+
+    def display(self):
+        """ Method prints a rectangle instance using # """
+        i = j = 0
+        while i < self.__height:
+            while j < self.__width:
+                print("#", end="")
+                j += 1
+            j = 0
+            i += 1
+            print()
