@@ -115,7 +115,10 @@ class Rectangle(Base):
 
     def display(self):
         """ Method prints a rectangle instance using # """
-        i = j = 0
+        a = b = i = j = 0
+        while a < self.__y:
+            print()
+            a += 1
         while i < self.__height:
             while j < self.__width:
                 print("#", end="")
@@ -128,3 +131,22 @@ class Rectangle(Base):
         """ Overrides the __str__ method """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self
                 .__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """ Method assigns an argument to each attribute """
+        if len(args) == 1:
+            self.id = args[0]
+        if len(args) == 2:
+            self.width = args[1]
+        elif len(args) == 3:
+            self.width = args[1]
+            self.height = args[2]
+        elif len(args) == 4:
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        elif len(args) == 5:
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
