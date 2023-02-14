@@ -123,3 +123,8 @@ class Rectangle(Base):
             j = 0
             i += 1
             print()
+
+    def __str__(self):
+        """ Overrides the __str__ method """
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self
+                .__y, self.__width, self.__height))
