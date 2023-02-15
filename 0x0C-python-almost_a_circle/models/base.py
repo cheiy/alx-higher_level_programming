@@ -32,7 +32,7 @@ class Base:
         new_list = []
         f_name = cls.__name__ + ".json"
         if list_objs is None:
-            new_list.append(" ")
+            list_objs = []
         for item in list_objs:
             new_list.append(item.to_dictionary())
         with open(f_name, "w") as f:
