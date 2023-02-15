@@ -42,8 +42,6 @@ class Base:
     def from_json_string(json_string):
         """ Method returns the list of the json string representation
         json_string"""
-        if len(json_string) == 0:
-            return []
         if json_string is None:
             return []
         import json
