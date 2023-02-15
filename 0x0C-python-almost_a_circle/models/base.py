@@ -43,9 +43,9 @@ class Base:
         """ Method returns the list of the json string representation
         json_string"""
         if len(json_string) == 0:
-            str_json = []
+            return []
         if json_string is None:
-            str_json = []
+            return []
         import json
-        str_json = json.dumps(json_string)
+        str_json = json.loads(json_string)
         return (str_json)
