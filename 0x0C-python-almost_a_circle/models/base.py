@@ -37,3 +37,15 @@ class Base:
             new_list.append(item.to_dictionary())
         with open(f_name, "w") as f:
             f.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Method returns the list of the json string representation
+        json_string"""
+        if len(json_string) == 0:
+            str_json = []
+        if json_string is None:
+            str_json = []
+        import json
+        str_json = json.dumps(json_string)
+        return (str_json)
