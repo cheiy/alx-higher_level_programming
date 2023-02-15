@@ -65,7 +65,7 @@ class Base:
         f_name = cls.__name__ + ".json"
         instances = []
         try:
-            with open(filename, 'r') as f:
+            with open(f_name, 'r') as f:
                 for instance in cls.from_json_string(f.read()):
                     instances.append(cls.create(**instance))
         except Exception as e:
