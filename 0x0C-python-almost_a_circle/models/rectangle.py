@@ -2,17 +2,7 @@
 """ Module contains the Base class """
 
 
-class Base:
-    """ Defines the Base Class """
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """ Class constructor method"""
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -116,16 +106,11 @@ class Rectangle(Base):
     def display(self):
         """ Method prints a rectangle instance using # """
         a = b = i = j = 0
-        while a < self.__y:
-            print()
-            a += 1
-        while i < self.__height:
-            while j < self.__width:
-                print("#", end="")
-                j += 1
-            j = 0
-            i += 1
-            print()
+        for v in range(self.y):
+            print("")
+        for r in range(self.height):
+            print(" "*self.x, end="")
+            print("#"*self.width)
 
     def __str__(self):
         """ Overrides the __str__ method """
