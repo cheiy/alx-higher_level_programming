@@ -16,10 +16,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if type(list_dictionaries) is None:
+        if isinstance(list_dictionaries, dict) is False:
+            return "[]"
+        if len(list_dictionaries) is None:
             return "[]"
         else:
             import json
-            for dict_ in list_dictionaries:
-                js = json.dumps(dict_)
-                print(js)
+            js = json.dumps(list_dictionaries)
+            return js
