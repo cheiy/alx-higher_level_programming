@@ -53,7 +53,7 @@ class Base:
         """ Method that returns an instance with all attributes already
         set """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 2, 2, 2)
+            dummy = cls(1, 1, 0, 0)
         if cls.__name__ == "Square":
             dummy = cls(1, 0, 0)
         dummy.update(**dictionary)
