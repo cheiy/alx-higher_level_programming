@@ -31,19 +31,19 @@ class Square(Rectangle):
         """ Method assigns attributes """
         if args:
             if len(args) == 1:
-                id = args[0]
+                self.id = args[0]
             elif len(args) == 2:
-                id = args[0]
-                size = args[1]
+                self.id = args[0]
+                self.size = args[1]
             elif len(args) == 3:
-                id = args[0]
-                size = args[1]
-                x = args[2]
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
             elif len(args) == 4:
-                id = args[0]
-                size = args[1]
-                x = args[2]
-                y = args[3]
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
         else:
             if 'id' in kwargs:
                 self.id = kwargs['id']
