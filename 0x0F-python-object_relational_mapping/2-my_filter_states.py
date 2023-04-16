@@ -8,9 +8,10 @@ if __name__ == "__main__":
     import MySQLdb
     db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                          database=argv[3])
-    s = argv[4]
+    search = argv[4]
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(s)
+    query = """SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY
+            id ASC""".format(search)
     cur.execute(query)
     res = cur.fetchall()
     for row in res:
