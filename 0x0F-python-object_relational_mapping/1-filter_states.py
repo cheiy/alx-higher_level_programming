@@ -9,7 +9,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                          database=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id ASC")
+    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'
+                ORDER BY id ASC""")
     res = cur.fetchall()
     for row in res:
         print("{}".format(row))
