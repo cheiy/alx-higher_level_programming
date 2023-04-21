@@ -26,5 +26,5 @@ if __name__ == "__main__":
     for state in res:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("    {}: {}".format(city.id, state.name))
+            print("    {}: {}".format(city.id, city.name))
     session.close()
