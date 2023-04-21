@@ -5,7 +5,7 @@ Module fetches cities by state
 from sys import argv
 from model_city import City
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -20,5 +20,5 @@ if __name__ == "__main__":
     session = Session()
     cities = session.query(State, City).filter(State.id == City.state_id)
     for city in cities.all():
-        print("{}: ({}) {}".format(record.State.name, record.City.id,
-                                   record.City.name))
+        print("{}: ({}) {}".format(city.State.name, city.City.id,
+                                   city.City.name))
