@@ -12,6 +12,8 @@ if __name__ == "__main__":
     query = """select DISTINCT city.name FROM cities AS city INNER JOIN states
     AS state ON city.state_id=state.id WHERE state.name='{}'""".format(argv[4])
     cur.execute(query)
+    print(", ".join([x[0] for x in cur.fetchall()]))
+    """
     res = cur.fetchall()
     cities = []
     for row in res:
@@ -26,3 +28,4 @@ if __name__ == "__main__":
             print(city)
     cur.close()
     db.close()
+    """
