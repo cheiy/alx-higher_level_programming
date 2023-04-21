@@ -3,7 +3,7 @@
 This module contains the model file for cities
 """
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, ForeignKey, String
 
 
 class City(Base):
