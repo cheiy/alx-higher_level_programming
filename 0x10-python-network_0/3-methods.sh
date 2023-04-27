@@ -1,3 +1,3 @@
 #!/bin/bash
-# Grep displays all HTTP methods accepted by server
-curl -sI "%$" | grep "Allow" | cut -d ' ' -f 2
+# Script displays all HTTP methods accepted by server
+curl -sI "$1" | grep "Allow" | cut -d ' ' -f 2
