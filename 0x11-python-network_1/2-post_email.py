@@ -12,9 +12,9 @@ if __name__ == "__main__":
 
     url = argv[1]
     email_address = argv[2]
-    data = urllib.parse.quote(email_address)
-    data = data.encode('ascii')
-    req = urllib.request.Request(url, data)
+    email = urllib.parse.quote(email_address)
+    email = data.encode('ascii')
+    req = urllib.request.Request(url, email)
     with urllib.request.urlopen(req) as response:
-        our_data = response.read()
+        our_data = response.read().decode('utf-8')
     print(our_data)
