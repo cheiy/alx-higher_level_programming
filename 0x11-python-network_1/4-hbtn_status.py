@@ -9,5 +9,5 @@ if __name__ == "__main__":
     url = "https://alx-intranet.hbtn.io/status"
     r = requests.get(url)
     print("Body response:")
-    print("- type: {}".format(type(r.reason)))
-    print("- content: {}".format(r.text))
+    print("    - type: {}".format(type(r.reason)))
+    print("    - content: {}".format(r.text))
