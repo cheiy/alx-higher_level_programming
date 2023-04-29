@@ -11,4 +11,5 @@ if __name__ == "__main__":
     url = argv[1]
     header = 'X-Request-Id'
     response = requests.get(url)
-    print(response.headers[header])
+    if response.headers.get(header) is not None:
+        print(response.headers[header])
