@@ -20,6 +20,7 @@ if __name__ == "__main__":
         name = response.json()['name']
         if i is None or name is None:
             print("Not a valid JSON")
+            exit()
     except KeyError as ke:
         print("No result")
     else:
