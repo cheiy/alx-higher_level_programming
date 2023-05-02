@@ -9,7 +9,6 @@ if __name__ == "__main__":
     from sys import argv
 
     url = "http://0.0.0.0:5000/search_user"
-    url2 = "http://e84d1976f296.923e441a.alx-cod.online:5000/search_user"
     try:
         letter = {'q': argv[1]}
         response = requests.post(url, data=letter)
@@ -19,7 +18,7 @@ if __name__ == "__main__":
     try:
         i = response.json()['id']
         name = response.json()['name']
-        if i is None or name is None:
+        if len(i) == 0 or len(name) == 0:
             print("Not a valid JSON")
     except KeyError as ke:
         print("No result")
