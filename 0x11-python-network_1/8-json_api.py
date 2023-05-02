@@ -8,7 +8,8 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    url = "http://e84d1976f296.923e441a.alx-cod.online:5000/search_user"
+    url = "http://0.0.0.0:5000/search_user"
+    url2 = "http://e84d1976f296.923e441a.alx-cod.online:5000/search_user"
     try:
         letter = {'q': argv[1]}
         response = requests.post(url, data=letter)
