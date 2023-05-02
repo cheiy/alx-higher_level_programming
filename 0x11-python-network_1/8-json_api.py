@@ -8,21 +8,19 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    url = "http://8a52a8698705.1e4c4cfb.alx-cod.online:5000/search_user"
+    url = "http://e84d1976f296.923e441a.alx-cod.online:5000/search_user"
     try:
-        letter = argv[1]
+        letter = {'q': argv[1]}
+        response = requests.post(url, data=letter)
     except IndexError:
         letter = {'q': ""}
         response = requests.post(url, data=letter)
-    else:
-        response = requests.post(url, data=letter)
     try:
-        res_json = response.json()
-    except HTTPError as e:
-        print("No result")
-    except JSONDecodeError as e:
-        print("Not a valid JSON")
-    else:
         i = response.json()['id']
         name = response.json()['name']
+        if i is None or name is None:
+            print("Not a valid JSON")
+    except KeyError as ke:
+        print("No result")
+    else:
         print("[{}] {}".format(i, name))
