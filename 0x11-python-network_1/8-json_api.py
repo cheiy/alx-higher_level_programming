@@ -18,7 +18,7 @@ if __name__ == "__main__":
     try:
         i = response.json()['id']
         name = response.json()['name']
-        if len(i) == 0 or len(name) == 0:
+        if i is None or name is None:
             print("Not a valid JSON")
     except KeyError as ke:
         print("No result")
